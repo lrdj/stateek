@@ -1,0 +1,136 @@
+<!--
+
+  Gardenia: #F0EEE9;
+  Tendril: #8A9A5B;
+  Willow: #9A8B4F;
+  Mocha-mousse: #A78C8B;
+  Cobblestone: #A89A91;
+  Rose-tan: #D19C97;
+  Viola: #7E6EAC;
+  Cornflower-blue: #93CCEA;
+
+-->
+
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	{%- seo -%}
+
+	{%- feed_meta -%}
+	{%- if jekyll.environment == 'production' and site.google_analytics -%}
+	{%- include google-analytics.html -%}
+	{%- endif -%}
+	
+	<link rel="stylesheet" href="{{ site.baseurl }}/assets/govuk/govuk-frontend.min.css">
+
+	<link rel="stylesheet" href="{{ site.baseurl }}/assets/govuk/govuk-frontend.unbranded.css">
+
+	<style>
+
+		/* Clarity Lab overrides */
+
+		/* Primary button (green) */
+		.govuk-button {
+		    background-color: #4CAF50; /* Standard green */
+		    color: #ffffff; /* White text */
+		    border: 1px solid #4CAF50;
+		    border-radius: 9px; /* Rounded corners */
+		    padding: 0.75em 1.25em;
+		    transition: background-color 0.2s ease-in-out;
+		    box-shadow: none;
+		}
+		.govuk-button:hover {
+		    background-color: #388E3C; /* Darker green on hover */
+		}
+		.govuk-button:focus {
+		    outline: 3px solid #ffdd00; /* Slightly toned-down yellow */
+		    box-shadow: 0 0 0 4px rgba(255, 221, 0, 0.5); /* Softer focus ring */
+		}
+
+
+		/* Secondary button (white outline) */
+		.govuk-button--secondary {
+		    background-color: #ffffff; /* White background */
+		    color: #000000; /* Black text */
+		    border: 1px solid #ccc;
+		    border-radius: 9px; /* Rounded corners */
+		    padding: 0.75em 1.25em;
+		    transition: background-color 0.2s ease-in-out;
+		}
+		.govuk-button--secondary:hover {
+		    background-color: #e0e0e0; /* Light gray on hover */
+		}
+
+		
+		/* Two column hero row with valigned left col for text */
+		.cl-hero {
+			display: flex;
+			align-items: center; /* Vertically centers both columns */
+		}
+		.cl-hero .govuk-grid-column-one-half {
+			display: flex;
+			flex-direction: column;
+			justify-content: center; /* Centers content inside */
+			align-items: flex-start; /* Keeps text aligned left */
+		}
+		.cl-button-cluster {
+			display: flex;
+			gap: 10px; /* Adds spacing between buttons */
+		}
+		
+		/* Clarity icons */
+		
+		.cl-icon-m { width:25%;margin-bottom: 0.5em; }
+		.cl-100pc { width:100%; }
+		
+		/* add this for feature tables .govuk-table__row td, */
+		.govuk-list.cl-check li {
+		  background: url("{{ site.baseurl }}/assets/i/cl-check.png") no-repeat left center;
+		  background-size: 1.5em;
+		  padding: 0.25em 0 0.25em 2em;
+		}
+
+		/* Service nav and lockup */
+		#cl-lockup { height:2em; }
+		@media (min-width: 640px) {
+		  .govuk-service-navigation__wrapper {
+			margin-left: auto;
+			padding-top:0.5em;
+		  }
+		}
+
+		/* supa big typog */
+		.govuk-heading-xl.inyourface { text-transform:uppercase;font-size:2.45em; text-indent: 0.5em;line-height:1.14em; }
+		@media (min-width: 640px) {
+		  .govuk-heading-xl.inyourface {
+			font-size:5em;line-height:1.17em;
+		  }
+		}
+		
+		/* inset text */
+		
+		.govuk-inset-text {
+		  border-left: 10px solid #7E6EAC;
+          }
+
+	</style>
+
+<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '920749863281298');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=920749863281298&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->

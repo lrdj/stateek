@@ -1,0 +1,21 @@
+{% assign year = page.url | split: '/' | slice: 2, 1 | first %}
+{% assign comments = site.data.comments[year] %}
+
+<!-- Debug -->
+<!-- Year from URL: {{ year }} -->
+<!-- Comments loaded: {{ site.data.comments[year] != nil }} -->
+<!-- Number of comments: {{ comments.data.size }} -->
+
+{% if comments and comments.data %}
+  <div class="govuk-!-margin-top-9" id="comments">
+    {% for comment in comments.data %}
+
+      <p class="govuk-body-l">{{ comment.userDisplayName }} added this comment:</p>
+
+      <div class="govuk-inset-text">
+        <p class="govuk-body-l">{{ comment.body }}</p>
+      </div>
+    {% endfor %}
+  </div>
+{% endif %} 
+

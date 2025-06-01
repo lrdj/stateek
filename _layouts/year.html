@@ -1,0 +1,83 @@
+---
+layout: unbranded
+---
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper govuk-main-wrapper--l">
+    <style>
+    /* Responsive headline styling */
+    .responsive-word {
+      display: block;
+      white-space: nowrap;
+      font-size: 8.5rem;
+      line-height: 0.5em;
+    }
+    @media (min-width: 769px) {
+      .responsive-word {
+        font-size: 17rem;
+      }
+    }
+    </style>
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-xl">
+          <span class="responsive-word" style="letter-spacing:-2%;">{{ page.year }}</span>
+          <br>
+          {{ page.title }}
+        </h1>
+
+        <p class="govuk-body-l">{{ page.intro }}</p>
+        <p class="govuk-body-l">{{ page.involved }}</p>
+
+        <h2 class="govuk-heading-l">Mmm... did that actually happen?</h2>
+
+        {% if page.images %}
+          <div class="image-gallery">
+            <p class="govuk-body-l"><strong>Friends uploaded some pictures:-)</strong></p>
+            {% for img in page.images %}
+              <img src="/assets/i/{{ img }}" style="width:100%;margin: 0 1em 1em 0;" />
+            {% endfor %}
+          </div>
+        {% else %}
+          <p class="govuk-body-l"><strong>Tell us about something that did:-)</strong></p>
+        {% endif %}
+
+        {% if page.has-comment %}
+          {% include display-comments.html %}
+        {% endif %}
+
+        <form action="https://formspree.io/f/xwpodwny" method="POST">
+          <input type="hidden" name="page" value="{{ page.url }}">
+          <input type="hidden" name="year" value="{{ page.year }}">
+          <input type="hidden" name="title" value="{{ page.title }}">
+
+          <div class="govuk-form-group">
+            <h1 class="govuk-label-wrapper">
+              <label class="govuk-label govuk-label--l" for="more-detail">
+                Say "happy birthday" to Jed:-)
+              </label>
+            </h1>
+            <div id="more-detail-hint" class="govuk-hint">
+               Or add more detail about {{ page.year }} &mdash; what happened exactly?
+            </div>
+            <textarea class="govuk-textarea" id="more-detail" name="message" rows="8" aria-describedby="more-detail-hint"></textarea>
+          </div>
+
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="email">
+              Please leave us your email address
+            </label>
+            <input class="govuk-input" id="email" name="email" type="email" spellcheck="false" aria-describedby="email-hint" autocomplete="email">
+          </div>
+
+          <button type="submit" class="govuk-button" data-module="govuk-button">
+            Send your message
+          </button>
+        </form>
+      </div>
+    </div>
+  </main>
+</div>
+
+

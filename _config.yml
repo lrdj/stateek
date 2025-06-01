@@ -1,0 +1,34 @@
+title: stateek - comment servless sandbox
+email: ian.kilby@thethingthatiwant.com
+description: >- # this means to ignore newlines until "baseurl:"
+  Stateek sandbox
+baseurl: "" # the subpath of your site, e.g. /blog
+# url: "https://jed90.falby.org" # the base hostname & protocol for your site, e.g. http://example.com
+
+# Build settings
+theme: null
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+sass:
+  style: compressed
+  load_paths:
+    - assets/govuk
+
+collections:
+  years:
+    output: true
+    permalink: /years/:path/
+
+exclude:
+  - .sass-cache/
+  - .jekyll-cache/
+  - gemfiles/
+  - Gemfile
+  - Gemfile.lock
+  - node_modules/    # Keep this to prevent GitHub Pages from processing node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
