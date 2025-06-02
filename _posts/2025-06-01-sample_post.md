@@ -1,5 +1,5 @@
 ---
-layout: unbranded
+layout: unbranded-post
 title: "Getting Started with Jekyll"
 date: 2025-06-01 12:00:00 -0500
 categories: jekyll tutorial
@@ -30,6 +30,4 @@ comments:
 
     </div>
 </div>
-
-{% include comment-form.html %}
 
